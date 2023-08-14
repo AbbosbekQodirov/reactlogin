@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-      {ready && (
+      {/* {ready && ( */}
         <BrowserRouter>
           <ToastContainer />
           <Navbar />
@@ -28,7 +28,7 @@ function App() {
             {!user && <Route path="/signup" element={<Signup />} />}
           </Routes>
         </BrowserRouter>
-      )}
+      {/* )} */}
     </>
   );
 }

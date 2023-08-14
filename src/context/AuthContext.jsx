@@ -35,15 +35,16 @@ function AuthContext({ children }) {
     dispatch({type: "LOGOUT"})
   }
 
-const unsup = projectAuth.onAuthStateChanged((user) => {
-  dispatch({
-    type: "AUTH_READY",
-    payload: user,
-  });
-});
+
 
   useEffect(()=>{
-    unsup()
+    const unsup = projectAuth.onAuthStateChanged((user) => {
+      dispatch({
+        type: "AUTH_READY",
+        payload: user,
+      });
+      unsup()
+    });
   }, [])
 
 
